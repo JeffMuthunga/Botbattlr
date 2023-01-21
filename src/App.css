@@ -1,0 +1,43 @@
+.App{
+  text-align: center;
+}
+.bot-container{
+  min-width: 200px;
+  max-width: 200px;
+  border-radius: 5px;
+  border: solid 1px;
+  margin: 10px;
+  
+}
+.bot-container img{
+  width: 200px;
+  background-color:green;
+  border-radius: 5px;
+} 
+.foot{
+  display: flex;
+  justify-content: space-evenly;
+  border-top: solid 1px;
+}
+.foot div{
+  height: 30px;
+  padding: 10px;
+}
+.bot-container p {
+  word-break: break-all;
+  white-space: normal;
+}
+.bot-collection {
+  display: flex;
+  flex-wrap: wrap;
+}
+.army-collection {
+  background: pink;
+  display: flex;
+  flex-wrap: wrap;
+}
+.allarmy header {
+  height: 40px;
+  background: pink;
+  
+}
