@@ -30,10 +30,22 @@ function App() {
     const unremovedDiv =  favorites.filter((clicked)=> clicked.id !== id)
     setFavorites(unremovedDiv)
   }
+  function handleDelete(id){
+    fetch(`http://localhost:8001/bots/${id}`,{
+        method: "DELETE"
+    })
+    .then(r=>r.json())
+    .then((data)=> filterDeletedDiv(id))
+}
+  function filterDeletedDiv (id){
+    const remainingElements = data.filter((obj)=> obj.id !== id)
+    setData(remainingElements)
+
+  }
   return(
     <div>
     <BotArmy favorites={favorites} deleteButton={false} handleClick={clickOnFavDiv} />
-    <BotCollection data={data} handleClick={onDivClick} deleteButton={true}/>
+    <BotCollection data={data} handleClick={onDivClick} handleDelete={handleDelete}  deleteButton={true}/>
    </div>
   )
 }
