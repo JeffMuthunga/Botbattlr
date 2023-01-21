@@ -13,7 +13,8 @@ function Bot({botProperties, handleClick}){
                     <div><FontAwesomeIcon icon={faHeartPulse} beat></FontAwesomeIcon><span>{health}</span></div>
                     <div><FontAwesomeIcon icon={faBolt} shake ></FontAwesomeIcon><span>{damage}</span></div>
                     <div><FontAwesomeIcon icon={faShieldHalved} shake ></FontAwesomeIcon><span>{armor}</span></div>
-                </div>        
+                </div>      
+                <button ><em>Delete</em></button>  
             </div>
             )
         

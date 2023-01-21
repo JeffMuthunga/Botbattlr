@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import './App.css';
 import BotCollection from './Components/BotCollection';
 import BotArmy from './Components/YourBotArmy';
+import Swal from 'sweetalert2';
 
 function App() {
   const [data, setData] = useState([])
@@ -14,9 +15,15 @@ function App() {
   }, [])
 
   const onDivClick =(id) =>{
+    
+
     const item = data.find((bot)=>bot.id === id)
     const fav = favorites.find((item)=> item.id === id)
-    fav? alert("existing") : setFavorites([...favorites, item])
+    fav? Swal.fire({
+      icon: 'error',
+      title: 'Oops...',
+      text: `Bot ${item.name} is already in your army`,
+    }): setFavorites([...favorites, item])
   }
   return(
     <div>
