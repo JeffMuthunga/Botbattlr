@@ -41,10 +41,12 @@
   background: pink;
   
 }
-button {
+.bot-container button {
   background: rgb(248, 23, 23);
   border-radius: 10px;
   border: none;
-  margin-left: 70px;
+  margin-left: 67px;
   margin-bottom: 10px;
+  height: 6%;
+  width: 34%;
 }

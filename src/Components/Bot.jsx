@@ -2,8 +2,14 @@ import React from "react"
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faHeartPulse, faBolt, faShieldHalved} from '@fortawesome/free-solid-svg-icons'
 
-function Bot({botProperties, handleClick}){
+function Bot({botProperties, handleClick, deleteButton}){
     const {id, name, health, damage, armor, catchphrase, avatar_url} = botProperties
+    function handleDelete(id){
+        fetch(`http://localhost:8001/bots/${id}`,{
+            method: "DELETE"
+        })
+        .then((data)=> set)
+    }
     return(
            <div onClick={()=>handleClick(id)} className="bot-container" >
                 <img src={avatar_url} alt={name}/>
@@ -14,7 +20,7 @@ function Bot({botProperties, handleClick}){
                     <div><FontAwesomeIcon icon={faBolt} shake ></FontAwesomeIcon><span>{damage}</span></div>
                     <div><FontAwesomeIcon icon={faShieldHalved} shake ></FontAwesomeIcon><span>{armor}</span></div>
                 </div>      
-                <button ><em>Delete</em></button>  
+                {deleteButton ? <button onClick={handleDelete} ><em>Delete</em></button>: null}  
             </div>
             )
         

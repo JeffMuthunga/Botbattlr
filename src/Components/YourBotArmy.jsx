@@ -1,10 +1,10 @@
 import Bot from "./Bot"
-import React, {useState, useEffect} from "react"
-
-function BotArmy({favorites, handleClick}) {
 
 
-    const botList = favorites.map((bot)=><Bot botProperties={bot} handleClick={handleClick} key={bot.id}/>)
+function BotArmy({favorites, handleClick, deleteButton}) {
+
+
+    const botList = favorites.map((bot)=><Bot botProperties={bot} handleClick={handleClick} deleteButton={deleteButton} key={bot.id}/>)
     
     return(
         <div className="allarmy">

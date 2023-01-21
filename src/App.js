@@ -7,6 +7,7 @@ import Swal from 'sweetalert2';
 function App() {
   const [data, setData] = useState([])
   const [favorites, setFavorites] = useState([])
+  const [deleteBtnMode, setDeleteBtnMode] = useState(true)
     
   useEffect(()=>{
       fetch("http://localhost:8001/bots")
@@ -15,20 +16,24 @@ function App() {
   }, [])
 
   const onDivClick =(id) =>{
-    
-
+  
     const item = data.find((bot)=>bot.id === id)
     const fav = favorites.find((item)=> item.id === id)
+    
     fav? Swal.fire({
       icon: 'error',
       title: 'Oops...',
       text: `Bot ${item.name} is already in your army`,
     }): setFavorites([...favorites, item])
   }
+  function clickOnFavDiv(id) {
+    const unremovedDiv =  favorites.filter((clicked)=> clicked.id !== id)
+    setFavorites(unremovedDiv)
+  }
   return(
     <div>
-    <BotArmy favorites={favorites} />
-    <BotCollection data={data} handleClick={onDivClick} />
+    <BotArmy favorites={favorites} deleteButton={false} handleClick={clickOnFavDiv} />
+    <BotCollection data={data} handleClick={onDivClick} deleteButton={true}/>
    </div>
   )
 }
