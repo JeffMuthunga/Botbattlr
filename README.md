@@ -1,13 +1,15 @@
 # Bank of Flatiron
 ### Jeff Muthunga
 
-This folder contains 4 major files with source code aimed at replicating bank transactions. The application can allow
+This folder contains 4 major files with source code aimed at displaying bots and allowing users to place them in an army section. The application can allow
 **A html, js, css and db.json files**
 ## 1. Project Description
-The Bank of Flatiron is an app that allows users o toggle through a number of transaction details. Additionally, more transaction details can be added to the app and rendered to the database and DOM.
+The BotBattlr is an app that allows users to display bots.
 
 ## 2. Screenshots
 ![image](https://user-images.githubusercontent.com/118323350/214040021-167d7622-80da-462a-8573-4192e7feb2c6.png))
+![image](https://user-images.githubusercontent.com/118323350/214040917-e6973afe-befe-47cf-ad62-4f4c548fed8b.png)
+
 
 
 ## 3. Project Setup
